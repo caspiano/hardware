@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.31.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/crystal-community/hardware">
+  <title>Hardware::CPU - github.com/crystal-community/hardware</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/crystal-community/hardware/Hardware" data-name="hardware">
+      <a href="../Hardware.html">Hardware</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/crystal-community/hardware/Hardware/CPU" data-name="hardware::cpu">
+      <a href="../Hardware/CPU.html">CPU</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/Memory" data-name="hardware::memory">
+      <a href="../Hardware/Memory.html">Memory</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/Net" data-name="hardware::net">
+      <a href="../Hardware/Net.html">Net</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/crystal-community/hardware/Hardware/PID" data-name="hardware::pid">
+      <a href="../Hardware/PID.html">PID</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/crystal-community/hardware/Hardware/PID/Stat" data-name="hardware::pid::stat">
+      <a href="../Hardware/PID/Stat.html">Stat</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/PID/Stat/State" data-name="hardware::pid::stat::state">
+      <a href="../Hardware/PID/Stat/State.html">State</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/PID/Status" data-name="hardware::pid::status">
+      <a href="../Hardware/PID/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Hardware::CPU
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hardware/CPU.html">Hardware::CPU</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>CPU related informations of your system.</p>
+
+<pre><code>cpu <span class="o">=</span> <span class="t">Hardware</span><span class="t">::</span><span class="t">CPU</span>.<span class="k">new</span>
+loop <span class="k">do</span>
+  sleep <span class="n">1</span>
+  p cpu.usage!.to_i <span class="c"># =&gt; 17</span>
+<span class="k">end</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L10" target="_blank">
+        cpu.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(number:Int32?=nil,parse_stats:Bool=true)-class-method" class="signature"><strong>.new</strong>(number : Int32? = <span class="n">nil</span>, parse_stats : Bool = <span class="n">true</span>)</a>
+        
+          <div class="summary"><p>Creates a new CPU stat to monitor the given core.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#guest-instance-method" class="signature"><strong>#guest</strong></a>
+        
+          <div class="summary"><p>Returns the "guest" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_nice-instance-method" class="signature"><strong>#guest_nice</strong></a>
+        
+          <div class="summary"><p>Returns the "guest_nice" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idle-instance-method" class="signature"><strong>#idle</strong></a>
+        
+          <div class="summary"><p>Returns the "idle" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idle_total-instance-method" class="signature"><strong>#idle_total</strong></a>
+        
+          <div class="summary"><p>Sum of <code><a href="../Hardware/CPU.html#idle-instance-method">#idle</a></code> and <code><a href="../Hardware/CPU.html#iowait-instance-method">#iowait</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#iowait-instance-method" class="signature"><strong>#iowait</strong></a>
+        
+          <div class="summary"><p>Returns the "iowait" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#irq-instance-method" class="signature"><strong>#irq</strong></a>
+        
+          <div class="summary"><p>Returns the "irq" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#nice-instance-method" class="signature"><strong>#nice</strong></a>
+        
+          <div class="summary"><p>Returns the "nice" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#number:Int32?-instance-method" class="signature"><strong>#number</strong> : Int32?</a>
+        
+          <div class="summary"><p>CPU number.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#softirq-instance-method" class="signature"><strong>#softirq</strong></a>
+        
+          <div class="summary"><p>Returns the "softirq" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#steal-instance-method" class="signature"><strong>#steal</strong></a>
+        
+          <div class="summary"><p>Returns the "steal" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system-instance-method" class="signature"><strong>#system</strong></a>
+        
+          <div class="summary"><p>Returns the "system" stat field.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#total-instance-method" class="signature"><strong>#total</strong></a>
+        
+          <div class="summary"><p>Sum of <code><a href="../Hardware/CPU.html#used-instance-method">#used</a></code> and <code><a href="../Hardware/CPU.html#idle_total-instance-method">#idle_total</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#usage(previous_cpu:CPU=self):Float64-instance-method" class="signature"><strong>#usage</strong>(previous_cpu : CPU = <span class="k">self</span>) : Float64</a>
+        
+          <div class="summary"><p>Returns each CPU usage in percentage based on the previous <code><a href="../Hardware/CPU.html">CPU</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#usage!:Float64-instance-method" class="signature"><strong>#usage!</strong> : Float64</a>
+        
+          <div class="summary"><p>Like <code><a href="../Hardware/CPU.html#usage(previous_cpu:CPU=self):Float64-instance-method">#usage</a></code>, but mutates the instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#used-instance-method" class="signature"><strong>#used</strong></a>
+        
+          <div class="summary"><p>Sum of <code><a href="../Hardware/CPU.html#user-instance-method">#user</a></code>, <code><a href="../Hardware/CPU.html#nice-instance-method">#nice</a></code>, <code><a href="../Hardware/CPU.html#system-instance-method">#system</a></code>, <code><a href="../Hardware/CPU.html#irq-instance-method">#irq</a></code>, <code><a href="../Hardware/CPU.html#softirq-instance-method">#softirq</a></code> and <code><a href="../Hardware/CPU.html#steal-instance-method">#steal</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user-instance-method" class="signature"><strong>#user</strong></a>
+        
+          <div class="summary"><p>Returns the "user" stat field.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(number:Int32?=nil,parse_stats:Bool=true)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(number : Int32? = <span class="n">nil</span>, parse_stats : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#new(number:Int32?=nil,parse_stats:Bool=true)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new CPU stat to monitor the given core.</p>
+
+<p>Must be lower than <code>System.cpu_count</code>, or <code>nil</code> for the whole cores in total.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="guest-instance-method">
+      <div class="signature">
+        
+        def <strong>guest</strong>
+
+        <a class="method-permalink" href="#guest-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "guest" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_nice-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_nice</strong>
+
+        <a class="method-permalink" href="#guest_nice-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "guest_nice" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idle-instance-method">
+      <div class="signature">
+        
+        def <strong>idle</strong>
+
+        <a class="method-permalink" href="#idle-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "idle" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idle_total-instance-method">
+      <div class="signature">
+        
+        def <strong>idle_total</strong>
+
+        <a class="method-permalink" href="#idle_total-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sum of <code><a href="../Hardware/CPU.html#idle-instance-method">#idle</a></code> and <code><a href="../Hardware/CPU.html#iowait-instance-method">#iowait</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L75" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="iowait-instance-method">
+      <div class="signature">
+        
+        def <strong>iowait</strong>
+
+        <a class="method-permalink" href="#iowait-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "iowait" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="irq-instance-method">
+      <div class="signature">
+        
+        def <strong>irq</strong>
+
+        <a class="method-permalink" href="#irq-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "irq" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="nice-instance-method">
+      <div class="signature">
+        
+        def <strong>nice</strong>
+
+        <a class="method-permalink" href="#nice-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "nice" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="number:Int32?-instance-method">
+      <div class="signature">
+        
+        def <strong>number</strong> : Int32?
+
+        <a class="method-permalink" href="#number:Int32?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>CPU number. <code>nil</code> means the whole cores in total.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="softirq-instance-method">
+      <div class="signature">
+        
+        def <strong>softirq</strong>
+
+        <a class="method-permalink" href="#softirq-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "softirq" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="steal-instance-method">
+      <div class="signature">
+        
+        def <strong>steal</strong>
+
+        <a class="method-permalink" href="#steal-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "steal" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system-instance-method">
+      <div class="signature">
+        
+        def <strong>system</strong>
+
+        <a class="method-permalink" href="#system-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "system" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="total-instance-method">
+      <div class="signature">
+        
+        def <strong>total</strong>
+
+        <a class="method-permalink" href="#total-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sum of <code><a href="../Hardware/CPU.html#used-instance-method">#used</a></code> and <code><a href="../Hardware/CPU.html#idle_total-instance-method">#idle_total</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="usage(previous_cpu:CPU=self):Float64-instance-method">
+      <div class="signature">
+        
+        def <strong>usage</strong>(previous_cpu : <a href="../Hardware/CPU.html">CPU</a> = <span class="k">self</span>) : Float64
+
+        <a class="method-permalink" href="#usage(previous_cpu:CPU=self):Float64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns each CPU usage in percentage based on the previous <code><a href="../Hardware/CPU.html">CPU</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="usage!:Float64-instance-method">
+      <div class="signature">
+        
+        def <strong>usage!</strong> : Float64
+
+        <a class="method-permalink" href="#usage!:Float64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Like <code><a href="../Hardware/CPU.html#usage(previous_cpu:CPU=self):Float64-instance-method">#usage</a></code>, but mutates the instance.</p>
+
+<pre><code>cpu <span class="o">=</span> <span class="t">Hardware</span><span class="t">::</span><span class="t">CPU</span>.<span class="k">new</span>
+loop <span class="k">do</span>
+  sleep <span class="n">1</span>
+  p cpu.usage!.to_i <span class="c"># =&gt; 17</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="used-instance-method">
+      <div class="signature">
+        
+        def <strong>used</strong>
+
+        <a class="method-permalink" href="#used-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sum of <code><a href="../Hardware/CPU.html#user-instance-method">#user</a></code>, <code><a href="../Hardware/CPU.html#nice-instance-method">#nice</a></code>, <code><a href="../Hardware/CPU.html#system-instance-method">#system</a></code>, <code><a href="../Hardware/CPU.html#irq-instance-method">#irq</a></code>, <code><a href="../Hardware/CPU.html#softirq-instance-method">#softirq</a></code> and <code><a href="../Hardware/CPU.html#steal-instance-method">#steal</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/cpu.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user-instance-method">
+      <div class="signature">
+        
+        def <strong>user</strong>
+
+        <a class="method-permalink" href="#user-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the "user" stat field.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

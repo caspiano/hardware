@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.31.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/crystal-community/hardware">
+  <title>Hardware::PID - github.com/crystal-community/hardware</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/crystal-community/hardware/Hardware" data-name="hardware">
+      <a href="../Hardware.html">Hardware</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/CPU" data-name="hardware::cpu">
+      <a href="../Hardware/CPU.html">CPU</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/Memory" data-name="hardware::memory">
+      <a href="../Hardware/Memory.html">Memory</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/Net" data-name="hardware::net">
+      <a href="../Hardware/Net.html">Net</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/crystal-community/hardware/Hardware/PID" data-name="hardware::pid">
+      <a href="../Hardware/PID.html">PID</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/crystal-community/hardware/Hardware/PID/Stat" data-name="hardware::pid::stat">
+      <a href="../Hardware/PID/Stat.html">Stat</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/PID/Stat/State" data-name="hardware::pid::stat::state">
+      <a href="../Hardware/PID/Stat/State.html">State</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/crystal-community/hardware/Hardware/PID/Status" data-name="hardware::pid::status">
+      <a href="../Hardware/PID/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Hardware::PID
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hardware/PID.html">Hardware::PID</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>All informations related to the Processes running on your sytem, defined by Process IDentifiers.</p>
+
+<pre><code>pid <span class="o">=</span> <span class="t">Hardware</span><span class="t">::</span><span class="t">PID</span>.<span class="k">new</span>           <span class="c"># Default is Process.pid</span>
+app <span class="o">=</span> <span class="t">Hardware</span><span class="t">::</span><span class="t">PID</span>.<span class="k">new</span> <span class="s">&quot;firefox&quot;</span> <span class="c"># Take the first matching PID</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L9" target="_blank">
+        pid.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(number:Int32=Process.pid)-class-method" class="signature"><strong>.new</strong>(number : Int32 = <span class="t">Process</span>.pid)</a>
+        
+          <div class="summary"><p>Creates a new <code><a href="../Hardware/PID.html">Hardware::PID</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(executable:String)-class-method" class="signature"><strong>.new</strong>(executable : String)</a>
+        
+          <div class="summary"><p>Creates a new <code><a href="../Hardware/PID.html">Hardware::PID</a></code> by finding the <code>executable</code>'s pid.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#each(&:PID-%3E):Nil-class-method" class="signature"><strong>.each</strong>(& : PID -> ) : Nil</a>
+        
+          <div class="summary"><p>Yields a <code><a href="../Hardware/PID.html">Hardware::PID</a></code> for each PID present on the system.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_pids(executable:String,&:Int32-%3E)-class-method" class="signature"><strong>.get_pids</strong>(executable : String, & : Int32 -> )</a>
+        
+          <div class="summary"><p>Yield each pids corresponding to a given <code>executable</code> name.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cmdline:String-instance-method" class="signature"><strong>#cmdline</strong> : String</a>
+        
+          <div class="summary"><p>Returns <code>/proc/</code><code>#pid</code><code>/cmdline</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#command:String-instance-method" class="signature"><strong>#command</strong> : String</a>
+        
+          <div class="summary"><p>Returns a <code>String</code> representation of <code>/proc/</code><code>#pid</code><code>/cmdline</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exe:String-instance-method" class="signature"><strong>#exe</strong> : String</a>
+        
+          <div class="summary"><p>Returns <code>/proc/</code><code>#pid</code><code>/exe</code> if readable.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exists?:Bool-instance-method" class="signature"><strong>#exists?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory:Int32-instance-method" class="signature"><strong>#memory</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the actual memory used by the process.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+          <div class="summary"><p>Returns the PID name based on <code><a href="../Hardware/PID.html#exe:String-instance-method">#exe</a></code> or <code><a href="../Hardware/PID.html#cmdline:String-instance-method">#cmdline</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#net:Net-instance-method" class="signature"><strong>#net</strong> : Net</a>
+        
+          <div class="summary"><p>Returns <code><a href="../Hardware/Net.html">Hardware::Net</a></code> for <code>#pid</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#number:Int32-instance-method" class="signature"><strong>#number</strong> : Int32</a>
+        
+          <div class="summary"><p>Pid number</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stat(cpu:CPU?=CPU.new):Stat-instance-method" class="signature"><strong>#stat</strong>(cpu : CPU? = <span class="t">CPU</span>.<span class="k">new</span>) : Stat</a>
+        
+          <div class="summary"><p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/stat</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#statm:Array(Int32)-instance-method" class="signature"><strong>#statm</strong> : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/statm</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#status:Status-instance-method" class="signature"><strong>#status</strong> : Status</a>
+        
+          <div class="summary"><p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/status</code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(number:Int32=Process.pid)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(number : Int32 = <span class="t">Process</span>.pid)
+
+        <a class="method-permalink" href="#new(number:Int32=Process.pid)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new <code><a href="../Hardware/PID.html">Hardware::PID</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(executable:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(executable : String)
+
+        <a class="method-permalink" href="#new(executable:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new <code><a href="../Hardware/PID.html">Hardware::PID</a></code> by finding the <code>executable</code>'s pid.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="each(&amp;:PID-&gt;):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>each</strong>(& : <a href="../Hardware/PID.html">PID</a> -> ) : Nil
+
+        <a class="method-permalink" href="#each(&:PID-%3E):Nil-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yields a <code><a href="../Hardware/PID.html">Hardware::PID</a></code> for each PID present on the system.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_pids(executable:String,&amp;:Int32-&gt;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>get_pids</strong>(executable : String, & : Int32 -> )
+
+        <a class="method-permalink" href="#get_pids(executable:String,&:Int32-%3E)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Yield each pids corresponding to a given <code>executable</code> name.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="cmdline:String-instance-method">
+      <div class="signature">
+        
+        def <strong>cmdline</strong> : String
+
+        <a class="method-permalink" href="#cmdline:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>/proc/</code><code>#pid</code><code>/cmdline</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="command:String-instance-method">
+      <div class="signature">
+        
+        def <strong>command</strong> : String
+
+        <a class="method-permalink" href="#command:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a <code>String</code> representation of <code>/proc/</code><code>#pid</code><code>/cmdline</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exe:String-instance-method">
+      <div class="signature">
+        
+        def <strong>exe</strong> : String
+
+        <a class="method-permalink" href="#exe:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>/proc/</code><code>#pid</code><code>/exe</code> if readable.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exists?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>exists?</strong> : Bool
+
+        <a class="method-permalink" href="#exists?:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>memory</strong> : Int32
+
+        <a class="method-permalink" href="#memory:Int32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the actual memory used by the process.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the PID name based on <code><a href="../Hardware/PID.html#exe:String-instance-method">#exe</a></code> or <code><a href="../Hardware/PID.html#cmdline:String-instance-method">#cmdline</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="net:Net-instance-method">
+      <div class="signature">
+        
+        def <strong>net</strong> : <a href="../Hardware/Net.html">Net</a>
+
+        <a class="method-permalink" href="#net:Net-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code><a href="../Hardware/Net.html">Hardware::Net</a></code> for <code>#pid</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="number:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>number</strong> : Int32
+
+        <a class="method-permalink" href="#number:Int32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Pid number</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stat(cpu:CPU?=CPU.new):Stat-instance-method">
+      <div class="signature">
+        
+        def <strong>stat</strong>(cpu : <a href="../Hardware/CPU.html">CPU</a>? = <span class="t">CPU</span>.<span class="k">new</span>) : <a href="../Hardware/PID/Stat.html">Stat</a>
+
+        <a class="method-permalink" href="#stat(cpu:CPU?=CPU.new):Stat-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/stat</code>.</p>
+
+<p>Have CPU information of the process.</p>
+
+<pre><code>pid_stat <span class="o">=</span> <span class="t">Hardware</span><span class="t">::</span><span class="t">PID</span>.<span class="k">new</span>.stat
+loop <span class="k">do</span>
+  sleep <span class="n">1</span>
+  p pid_stat.cpu_usage! <span class="c"># =&gt; 1.5</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L100" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="statm:Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>statm</strong> : Array(Int32)
+
+        <a class="method-permalink" href="#statm:Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/statm</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="status:Status-instance-method">
+      <div class="signature">
+        
+        def <strong>status</strong> : <a href="../Hardware/PID/Status.html">Status</a>
+
+        <a class="method-permalink" href="#status:Status-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a parsed <code>/proc/</code><code>#pid</code><code>/status</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-community/hardware/blob/4be634b02aac96b93f3edfb4a4b4959a22b8d548/src/pid.cr#L114" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
